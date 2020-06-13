@@ -3,12 +3,20 @@
 # target always iosevka-custom
 custom_dist=${1-"iosevka-custom"} # try different source
 source_dist="$(dirname $0)"/../dist/"$custom_dist"/ttf
+backup_dest="$(dirname $0)"/../dist/iosevka-backup
 destination=/usr/share/fonts/truetype/iosevka-custom
 
 if [ -d $source_dist ]; then
+	if [[ -d "$backup_dest" && $(ls "$backup_dest" | wc -w) != "0" ]]; then
+		echo "$backup_dest not empty - please delete files to install"
+		echo "this is for your protection, to delete run this command:"
+		echo "rm $(pwd)/$backup_dest/*"
+		exit 0
+	fi
+
 	if [ -d $destination ]; then
-		mkdir -p dist/iosevka-backup
-		sudo mv $destination/* dist/iosevka-backup
+		mkdir -p $backup_dest
+		sudo mv $destination/* $backup_dest
 	else
 		sudo mkdir -p $destination
 	fi

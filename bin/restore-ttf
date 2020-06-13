@@ -1,15 +1,19 @@
 #!/usr/bin/env bash
 
-source_dist="$(dirname $0)"/../dist/iosevka-backup
+backup_dest="$(dirname $0)"/../dist/iosevka-backup
 destination=/usr/share/fonts/truetype/iosevka-custom
 
-if [ -d $source_dist ]; then
+# proceed if there is a backup -- check files > 0
+if [[ -d "$backup_dest" && $(ls "$backup_dest" | wc -w) != "0" ]]; then
 	if [ ! -d $destination ]; then
 		sudo mkdir -p $destination
 	fi
-
-	# TODO: proceed if there is a backup -- check files > 0
 	sudo rm $destination/*
-	sudo cp $source_dist/*.ttf $destination
+	sudo mv $backup_dest/*.ttf $destination # restores the backup fonts via move
+	rmdir $backup_dest # makes it more obvious, no reason keep an empty dir
 	fc-cache -f
+else
+	echo "There is no backup where expected:"
+	echo "$(pwd)/$backup_dest/"
+	exit 1
 fi
