@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source_dist=./dist/iosevka-backup
+source_dist="$(dirname $0)"/../dist/iosevka-backup
 destination=/usr/share/fonts/truetype/iosevka-custom
 
 if [ -d $source_dist ]; then
