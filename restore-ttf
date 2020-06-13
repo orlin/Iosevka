@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+source_dist=./dist/iosevka-backup
+destination=/usr/share/fonts/truetype/iosevka-custom
+
+if [ -d $source_dist ]; then
+	if [ ! -d $destination ]; then
+		sudo mkdir -p $destination
+	fi
+
+	# TODO: proceed if there is a backup -- check files > 0
+	sudo rm $destination/*
+	sudo cp $source_dist/*.ttf $destination
+	fc-cache -f
+fi

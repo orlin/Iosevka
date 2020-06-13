@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# TODO: ability to install other than iosevka-custom
+source_dist=./dist/iosevka-custom/ttf
+destination=/usr/share/fonts/truetype/iosevka-custom
+
+if [ -d $source_dist ]; then
+	if [ -d $destination ]; then
+		mkdir -p dist/iosevka-backup
+		sudo mv $destination/* dist/iosevka-backup
+	else
+		sudo mkdir -p $destination
+	fi
+
+	sudo cp $source_dist/*.ttf $destination
+	fc-cache -f
+fi
