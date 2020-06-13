@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-# TODO: ability to install other than iosevka-custom
-source_dist="$(dirname $0)"/../dist/iosevka-custom/ttf
+# target always iosevka-custom
+custom_dist=${1-"iosevka-custom"} # try different source
+source_dist="$(dirname $0)"/../dist/"$custom_dist"/ttf
 destination=/usr/share/fonts/truetype/iosevka-custom
 
 if [ -d $source_dist ]; then
