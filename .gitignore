@@ -34,7 +34,8 @@ node_modules
 test/
 preview/
 build/
-dist/
+dist/*
+!dist/iosevka-custom/
 ref/
 pages/
 releases/
@@ -60,7 +61,7 @@ glyphs/*.js
 
 package-lock.json
 private.toml
-private-build-plans.toml
+# private-build-plans.toml
 private.mk
 
 # Ignore tmp directory
