@@ -6,3 +6,8 @@ source_dist="$(dirname $0)"/../dist/"$custom_dist"/ttf
 rm -rf "$source_dist" # start clean
 cd "$(dirname $0)"/..
 npm run build -- ttf::$custom_dist
+if [ $custom_dist != "iosevka" ]; then
+	echo
+	echo "Making archive ttf.zip"
+	cd "$source_dist"/.. && zip -r ttf.zip ttf
+fi
