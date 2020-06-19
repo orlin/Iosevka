@@ -8,6 +8,7 @@ cd "$(dirname $0)"/..
 npm run build -- ttf::$custom_dist
 if [ $custom_dist != "iosevka" ]; then
 	echo
+	cd "$source_dist"/.. && echo "Location: $(pwd)"
 	echo "Making archive ttf.zip"
-	cd "$source_dist"/.. && zip -r ttf.zip ttf
+	zip -r ttf.zip ttf
 fi
