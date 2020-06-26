@@ -1,4 +1,4 @@
-# Iosevka ![Version](https://img.shields.io/github/release/be5invis/Iosevka.svg) forked for custom building
+# Iosevka v3.1.1 -- forked for custom build and dist/
 
 [Coders’ typeface](https://raw.githubusercontent.com/be5invis/Iosevka/master/images/preview-all.png), built from code.
 
