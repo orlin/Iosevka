@@ -10,7 +10,7 @@ the `dist` directory found here on GitHub.
 More specifically it is the [`install/term`](https://github.com/orlin/dots/blob/master/install/term)
 script which does that.
 
-The [bin/](https://github.com/orlin/Iosevka/tree/build/bin) directory contains scripts
+The [bin/](https://github.com/orlin/Iosevka/tree/master/bin) directory contains scripts
 that I build and try custom my builds with as declared by `private-build-plans.toml`.
 Just be sure to exit / restart the terminal after you run the `bin/install-ttf` script.
 
