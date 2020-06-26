@@ -11,7 +11,7 @@ if [ -d $source_dist ]; then
 		echo "$backup_dest not empty - please delete files to install"
 		echo "this is for your protection, to delete run this command:"
 		echo "rm $(pwd)/$backup_dest/*"
-		exit 0
+		exit 1
 	fi
 
 	if [ -d $destination ]; then
