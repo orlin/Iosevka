@@ -2,7 +2,7 @@
 family = "Iosevka Custom"	              # Font menu family name
 
 # Customize styles
-design = ["sp-force-monospace", "v-tilde-low", "v-asterisk-low", "v-underscore-low", "v-at-threefold", "v-zero-long-dotted", "v-brace-straight", "v-dollar-throughcap", "v-six-open-contour", "v-nine-open-contour", "v-eszet-longs-s-lig"]
+design = ["sp-fixed", "v-tilde-low", "v-asterisk-low", "v-underscore-low", "v-at-threefold", "v-zero-long-dotted", "v-brace-straight", "v-dollar-throughcap", "v-six-open-contour", "v-nine-open-contour", "v-eszet-longs-s-lig"]
 # upright = ["upright-styles"]            # Uncomment this line to set styles for upright only
 # italic = ["italic-styles"]              # Uncomment this line to set styles for italic only
 # oblique = ["oblique-styles"]            # Uncomment this line to set styles for oblique only
