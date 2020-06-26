@@ -1,3 +1,12 @@
+---
+name: Bug report
+about: Create a report to help us improve
+title: ''
+labels: "\U0001F41E Bug"
+assignees: ''
+
+---
+
 Describe your problem here. Provide pictures and files if necessary.
 
 ---

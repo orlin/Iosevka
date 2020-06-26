@@ -3,7 +3,7 @@
 ### Changing the numbers may make the builder crash / hang / produce broken shapes.
 
 [iosevka]
-copyright = 'Copyright (c) 2015-2019 Belleve Invis.'
+copyright = 'Copyright (c) 2015-2020 Belleve Invis.'
 licence = '''This font software is licenced under the SIL Open Font Licence, Version 1.1. This is licence is avaliable with a FAQ at: http://scripts.sil.org/OFL. This font software is distributes on an 'AS IS' basis, without warranties or conditions of any kind, either express or implied. See the SIL Open Font licence fot the specific language, premissions and limitations governing your use of this font software.'''
 manufacturer = 'Belleve Invis'
 designer = 'Belleve Invis'
@@ -43,8 +43,6 @@ shoulderfineMin = 0.8
 isItalic = false   # Use italic shapes?
 isOblique = false  # Use oblique shapes?
 
-lllcrowdedness = 3.33333333
-
 spacing = 1        # Spacing indicator
 
 # Powerline-specific parameters
@@ -66,7 +64,73 @@ enableCvSs = true
 enableLigation = true
 
 # Excluded code points
-excludedCodePointRanges = []
+excludedCharRanges = []
+
+[verbose]
+verbose = true
+
+###### Slab variant
+[slab]
+slab = true
+onebalance = 10
+overshootx = -16
+[slab.multiplies]
+sb = 1.1
+
+###### Spacings
+# Terminal variant
+[sp-term]
+spacing = 0
+
+# "FontFonfig Monospace"
+[sp-force-monospace]
+spacing = 0
+forceMonospace = true
+
+# Fixed variant
+[sp-fixed]
+spacing = 0
+enableLigation = false
+forceMonospace = true
+
+###### Disabling Ligation
+[no-ligation]
+enableLigation = false
+[nolig] # For compatibility
+enableLigation = false
+
+###### Disabling CV/SS
+[no-cv-ss]
+enableCvSs = false
+
+###### Slantness
+[s-italic]
+isItalic = true
+slantAngle = 10
+jhook = 120
+
+[s-oblique]
+isOblique = true
+slantAngle = 10
+jhook = 120
+
+###### Diversity
+[diversity-1]
+diversityM = 1.25
+diversityF = 1.00
+diversityI = 0.75
+diversityII = 0.75
+
+[diversity-2]
+diversityM = 1.25
+diversityF = 0.75
+diversityI = 0.75
+diversityII = 0.5
+
+###################################################################################################
+### Blendable Options
+
+###### Weight
 
 [shapeWeight.blend.400]
 stroke = 72       # Primary stroke width
@@ -84,12 +148,6 @@ smallsmooth = 200        # Vertical arc size in lowercase letters.
 superness = 2.275        # Superness of arcs.
 tightHookSuperness = 2.3 # superness of tight hooks
 
-barpos = 0.525       # Position of most crossbars
-overlaypos = 0.52    # Position of the overlay mark.
-ebarpos = 0.50       # Position of the middle bar in `e`.
-gbarpos = 0.42
-fivebarpos = 0.64
-fbarpos = 0.91       # Position of the middle bar in `f`
 fbarStrokeAdj = 0.25 # Portion of the fill above the f-bar position
 
 rbalance = 60
@@ -117,7 +175,6 @@ vtipfineSlab = 0.9
 jut = 70
 vjut = 145
 smooth = 195
-barpos = 0.525
 rhook = 110
 rbalance = 60
 rbalance2 = 15
@@ -134,7 +191,6 @@ periodsize = 55
 jut = 75
 vjut = 145
 smooth = 195
-barpos = 0.525
 rhook = 110
 rbalance = 60
 rbalance2 = 15
@@ -151,7 +207,6 @@ periodsize = 77
 jut = 80
 vjut = 145
 smooth = 195
-barpos = 0.525
 rhook = 110
 rbalance = 60
 rbalance2 = 15
@@ -169,7 +224,6 @@ essx = 1.12
 jut = 85
 vjut = 157
 smooth = 200
-barpos = 0.525
 rhook = 110
 rbalance = 60
 rbalance2 = 15
@@ -183,7 +237,6 @@ essx = 1.07
 jut = 85
 vjut = 170
 smooth = 203
-barpos = 0.525
 rhook = 110
 rbalance = 55
 rbalance2 = 20
@@ -197,7 +250,6 @@ essx = 1.06
 jut = 89
 vjut = 179
 smooth = 206
-barpos = 0.51
 rhook = 95
 rbalance = 52
 rbalance2 = 23
@@ -211,7 +263,6 @@ essx = 1.05
 jut = 96
 vjut = 189
 smooth = 210
-barpos = 0.51
 rhook = 97
 rbalance = 50
 rbalance2 = 25
@@ -225,7 +276,6 @@ essx = 1.03
 jut = 100
 vjut = 199
 smooth = 215
-barpos = 0.51
 rhook = 105
 rbalance = 50
 rbalance2 = 25
@@ -234,44 +284,19 @@ sb = 42
 dotsize = 180
 periodsize = 200
 
-[verbose]
-verbose = true
-
-### Slantness
-[s-italic]
-isItalic = true
-slantAngle = 10
-jhook = 120
-
-[s-oblique]
-isOblique = true
-slantAngle = 10
-jhook = 120
-
-### Slab variant
-[slab]
-slab = true
-onebalance = 10
-overshootx = -16
-[slab.multiplies]
-sb = 1.1
-
-### Spacings
-# Fixed variant
-[sp-fixed]
-spacing = 0
-enableLigation = false
-forceMonospace = true
-
-# Terminal variant
-[sp-term]
-spacing = 0
-
 ###### Widths
-# NOTE: this section is highly experimental
-# HANDLE WITH EXTREME CARE
-# Expanded : I heard someone want it being wider...
-[wd-9.multiplies]
+[shapeWidth.multiplies.blend.500]
+width        = 1
+stroke       = 1
+sb           = 1
+jut          = 1
+longjut      = 1
+rhook        = 1
+rbalance     = 1
+tbalance     = 1
+smallsmooth  = 1
+
+[shapeWidth.multiplies.blend.664]
 width        = 1.328 # 664 for normal char
 stroke       = 1.103 # Make strokes a little thicker
 sb           = 1.777
@@ -282,10 +307,7 @@ rbalance     = 1.236
 tbalance     = 1.210
 smallsmooth  = 1.103
 
-[ultra-extended]
-inherits = ['wd-9']
-
-[wd-8.multiplies]
+[shapeWidth.multiplies.blend.618]
 width        = 1.236 # 618 for normal char
 stroke       = 1.075 # Make strokes a little thicker
 sb           = 1.539
@@ -296,10 +318,7 @@ rbalance     = 1.236
 tbalance     = 1.154
 smallsmooth  = 1.075
 
-[extra-extended]
-inherits = ['wd-8']
-
-[wd-7.multiplies]
+[shapeWidth.multiplies.blend.576]
 width        = 1.152 # 576mem for normal char
 stroke       = 1.050 # Make strokes a little thicker
 sb           = 1.333
@@ -310,10 +329,7 @@ rbalance     = 1.152
 tbalance     = 1.100
 smallsmooth  = 1.050
 
-[extended]
-inherits = ['wd-7']
-
-[wd-6.multiplies]
+[shapeWidth.multiplies.blend.537]
 width        = 1.074 # 537mem for normal char
 stroke       = 1.023 # Make strokes a little thicker
 sb           = 1.154
@@ -324,10 +340,7 @@ rbalance     = 1.074
 tbalance     = 1.049
 smallsmooth  = 1.023
 
-[semi-extended]
-inherits = ['wd-6']
-
-[wd-4.multiplies]
+[shapeWidth.multiplies.blend.466]
 width        = 0.932 # 466mem for normal char
 stroke       = 0.975
 sb           = 0.866
@@ -338,10 +351,7 @@ rbalance     = 0.931
 tbalance     = 0.953
 smallsmooth  = 0.975
 
-[semi-condensed]
-inherits = ['wd-4']
-
-[wd-3.multiplies]
+[shapeWidth.multiplies.blend.434]
 width        = 0.868 # 434mem for normal char
 stroke       = 0.952
 sb           = 0.750
@@ -351,29 +361,6 @@ rhook        = 1
 rbalance     = 0.868
 tbalance     = 0.909
 smallsmooth  = 0.952
-
-[condensed]
-inherits = ['wd-3']
-
-[diversity-1]
-diversityM = 1.25
-diversityF = 1.00
-diversityI = 0.75
-diversityII = 0.75
-
-[diversity-2]
-diversityM = 1.25
-diversityF = 0.75
-diversityI = 0.75
-diversityII = 0.5
-
-[no-ligation]
-enableLigation = false
-[nolig] # For compatibility
-enableLigation = false
-
-[no-cv-ss]
-enableCvSs = false
 
 ###################################################################################################
 ### Metric-override hives
@@ -539,4 +526,4 @@ powerlineShiftX = 500
 
 # Exclude code points
 [exclude-check-and-cross-symbol.appends]
-excludedCodePointRanges = [[10003, 10008]]
+excludedCharRanges = [[10003, 10008]]
