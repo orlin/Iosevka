@@ -3,11 +3,11 @@
 [Coders’ typeface](https://raw.githubusercontent.com/be5invis/Iosevka/master/images/preview-all.png), built from code.
 
 This is a custom [Iosevka](https://github.com/orlin/Iosevka).
-Built for use by my [dots](https://github.com/orlin/dots).
+Built for use by my [dots](https://github.com/dourbit/blesstheos).
 Cloning the repo takes forever, as it is huge, such as around 3 Gigs unreal,
 thus the install script copies the fonts from
 the `dist` directory found here on GitHub.
-More specifically it is the [`install/term`](https://github.com/orlin/dots/blob/master/install/term)
+More specifically it is the [`install/term`](https://github.com/dourbit/blesstheos/blob/master/install/term)
 script which does that.
 
 The [bin/](https://github.com/orlin/Iosevka/tree/master/bin) directory contains scripts
@@ -17,7 +17,7 @@ Just be sure to exit / restart the terminal after you run the `bin/install-ttf` 
 This is meant for building the font on a Linux, I have used Ubuntu for the purpose.
 Used the following steps to install the pre-requisites:
 
--   [`install/node`](https://github.com/orlin/dots/blob/master/install/node)
+-   [`install/node`](https://github.com/dourbit/blesstheos/blob/master/install/node)
 -   `sudo apt install -y ttfautohint`
 -   `otfcc`:
 
@@ -29,7 +29,7 @@ Used the following steps to install the pre-requisites:
             make config=release_x64
             cp bin/release-x64/\* ~/bin
 
--   [afdko](https://pypi.org/project/afdko) after [install/python](https://github.com/orlin/dots/blob/master/install/python)
+-   [afdko](https://pypi.org/project/afdko) after [install/python](https://github.com/dourbit/blesstheos/blob/master/install/python)
 
     pip3 install afdko
 
